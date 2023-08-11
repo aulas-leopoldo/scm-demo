@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+#include <string.h>
 
 void soma(int a, int b) {
     printf("%d + %d = %d\n", a, b, a + b);
@@ -33,9 +34,15 @@ void subtrai(int a, int b) {
 
 int main() {
     data_hora();
-    char nome[80];
-    printf("Insira o seu nome: ");
-    scanf("%s", nome);
+    char nome[100];
+    printf("Digite um nome: ");
+    fgets(nome, sizeof(nome), stdin); // Lê a linha inteira, incluindo os espaços
+
+    // Remove a quebra de linha (\n) final, se existir
+    size_t len = strlen(nome);
+    if (len > 0 && nome[len - 1] == '\n') {
+        nome[len - 1] = '\0';
+    }
     printf("Ola estudante %s.\n", nome);
 
     soma(5, 3);
