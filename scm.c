@@ -30,6 +30,11 @@ void subtrai(int a, int b) {
     printf("%d - %d = %d\n", a, b, a - b);
 }
 
+void raiz(unsigned int a)
+{
+    print("SRQT(%d) = %.4f",a,sqrt(double(a)));
+}
+
 
 int main() {
     data_hora();
